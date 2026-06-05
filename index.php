@@ -481,6 +481,7 @@ body {
     &copy; <?= date('Y') ?> Vaniel Speaker — Premium Audio Experience
 </div>
 
+
 <!-- ── CHAT BUBBLE ── -->
 <style>
 #chat-bubble {
@@ -503,9 +504,7 @@ body {
     box-shadow: 0 4px 24px rgba(201,168,76,0.35);
     transition: transform 0.2s ease, background 0.2s ease;
 }
-
 #chat-toggle:hover { background: var(--gold-light); transform: scale(1.08); }
-
 #chat-toggle svg { width: 24px; height: 24px; color: #0d0d0d; }
 
 #chat-window {
@@ -523,7 +522,6 @@ body {
     box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     z-index: 999;
 }
-
 #chat-window.open { display: flex; }
 
 .chat-header {
@@ -532,123 +530,61 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    position: relative;
 }
-
 .chat-header-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 32px; height: 32px; border-radius: 50%;
     background: rgba(201,168,76,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
 }
-
 .chat-header-icon svg { width: 16px; height: 16px; color: var(--gold); }
-
 .chat-header-text { flex: 1; }
-
-.chat-header-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-}
-
-.chat-header-sub {
-    font-size: 11px;
-    color: var(--text-subtle);
-    margin-top: 1px;
-}
-
+.chat-header-title { font-size: 13px; font-weight: 500; color: var(--text); }
+.chat-header-sub { font-size: 11px; color: var(--text-subtle); margin-top: 1px; }
 .chat-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-subtle);
-    padding: 4px;
-    transition: color 0.2s;
+    background: none; border: none; cursor: pointer;
+    color: var(--text-subtle); padding: 4px; transition: color 0.2s;
 }
-
 .chat-close:hover { color: var(--text); }
 .chat-close svg { width: 16px; height: 16px; }
 
 #chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
+    flex: 1; overflow-y: auto; padding: 16px;
+    display: flex; flex-direction: column; gap: 12px;
+    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
 }
-
 .msg {
-    max-width: 85%;
-    font-size: 13px;
-    line-height: 1.6;
-    padding: 10px 14px;
-    border-radius: 12px;
-    word-break: break-word;
+    max-width: 85%; font-size: 13px; line-height: 1.6;
+    padding: 10px 14px; border-radius: 12px; word-break: break-word;
 }
-
 .msg.bot {
-    background: #1e1e1e;
-    color: var(--text);
+    background: #1e1e1e; color: var(--text);
     border: 1px solid var(--border);
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
+    align-self: flex-start; border-bottom-left-radius: 4px;
 }
-
 .msg.user {
-    background: var(--gold);
-    color: #0d0d0d;
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
-    font-weight: 500;
+    background: var(--gold); color: #0d0d0d;
+    align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 500;
 }
-
 .msg.typing { color: var(--text-muted); font-style: italic; }
 
 .chat-footer {
-    padding: 12px 16px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    gap: 8px;
-    align-items: center;
+    padding: 12px 16px; border-top: 1px solid var(--border);
+    display: flex; gap: 8px; align-items: center;
 }
-
 #chat-input {
-    flex: 1;
-    background: #1a1a1a;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 9px 12px;
-    font-size: 13px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
+    flex: 1; background: #1a1a1a; border: 1px solid var(--border);
+    border-radius: 8px; padding: 9px 12px; font-size: 13px;
+    color: var(--text); font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color 0.2s;
 }
-
 #chat-input::placeholder { color: var(--text-subtle); }
 #chat-input:focus { border-color: var(--gold-dim); }
-
 #chat-send {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--gold);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--gold); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; flex-shrink: 0;
 }
-
 #chat-send:hover { background: var(--gold-light); }
 #chat-send svg { width: 16px; height: 16px; color: #0d0d0d; }
 #chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
@@ -696,29 +632,27 @@ body {
 </div>
 
 <script>
-const DIFY_API_KEY = 'app-uqc7LBzwu60fx0OKQWygA8wa';
-const DIFY_API_URL = 'https://api.dify.ai/v1/chat-messages';
+// Gọi thẳng Dify API từ JavaScript — không qua PHP proxy
+const DIFY_TOKEN = 'fMt3R9M7amfd7Srr';
+const DIFY_URL = 'https://udify.app/api/chat-messages';
 
 let conversationId = '';
 
-const toggle = document.getElementById('chat-toggle');
+const toggle   = document.getElementById('chat-toggle');
 const closeBtn = document.getElementById('chat-close-btn');
 const chatWindow = document.getElementById('chat-window');
-const input = document.getElementById('chat-input');
-const sendBtn = document.getElementById('chat-send');
+const input    = document.getElementById('chat-input');
+const sendBtn  = document.getElementById('chat-send');
 const messages = document.getElementById('chat-messages');
 
 toggle.addEventListener('click', () => {
     chatWindow.classList.toggle('open');
     if (chatWindow.classList.contains('open')) input.focus();
 });
-
 closeBtn.addEventListener('click', () => chatWindow.classList.remove('open'));
-
 input.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 });
-
 sendBtn.addEventListener('click', sendMessage);
 
 function addMsg(text, role) {
@@ -733,18 +667,27 @@ function addMsg(text, role) {
 async function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
-
     input.value = '';
     sendBtn.disabled = true;
     addMsg(text, 'user');
-
     const typing = addMsg('Đang soạn...', 'bot typing');
 
     try {
-        const res = await fetch('chat_proxy.php', {
+        const body = {
+            inputs: {},
+            query: text,
+            response_mode: 'blocking',
+            user: 'visitor-' + Math.random().toString(36).slice(2, 8)
+        };
+        if (conversationId) body.conversation_id = conversationId;
+
+        const res = await fetch(DIFY_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text, conversation_id: conversationId })
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + DIFY_TOKEN
+            },
+            body: JSON.stringify(body)
         });
 
         const data = await res.json();
@@ -765,7 +708,6 @@ async function sendMessage() {
     input.focus();
 }
 </script>
-
 <script src="auth.js"></script>
 <script src="cart.js"></script>
 <script>window.addEventListener("DOMContentLoaded", initAddToCartButtons);</script>
