@@ -633,8 +633,8 @@ body {
 
 <script>
 // Gọi thẳng Dify API từ JavaScript — không qua PHP proxy
-const DIFY_TOKEN = 'fMt3R9M7amfd7Srr';
-const DIFY_URL = 'https://udify.app/api/chat-messages';
+
+
 
 let conversationId = '';
 
@@ -681,11 +681,10 @@ async function sendMessage() {
         };
         if (conversationId) body.conversation_id = conversationId;
 
-        const res = await fetch(DIFY_URL, {
+        const res = await fetch('chat_proxy.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + DIFY_TOKEN
             },
             body: JSON.stringify(body)
         });
