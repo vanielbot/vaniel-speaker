@@ -675,7 +675,7 @@ async function sendMessage() {
     try {
         const body = {
             inputs: {},
-            query: text,
+            message: text,
             response_mode: 'blocking',
             user: 'visitor-' + Math.random().toString(36).slice(2, 8)
         };
